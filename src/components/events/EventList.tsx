@@ -1,6 +1,7 @@
 import React from 'react';
 import { EventItem } from '../../types/Event';
 import Event from './Event';
+import classes from './event-list.module.css';
 
 interface Props {
   events: EventItem[];
@@ -8,7 +9,7 @@ interface Props {
 
 export default function EventList({ events }: Props) {
   return (
-    <ul>
+    <ul className={classes.list}>
       {events.length > 0 &&
         events.map(event => {
           const { id, title, location, date, image, description, isFeatured } = event;
